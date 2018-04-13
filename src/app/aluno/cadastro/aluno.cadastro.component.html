@@ -1,0 +1,36 @@
+<form (ngSubmit)="salvar()">
+
+  <br/>
+  <h3>{{titulo}}</h3>
+
+  <input type="input" name="id" size=" " [(ngModel)]="aluno.id" disabled hidden />
+
+  <label>Nome:
+    <input type="input" name="nome" size="50" [(ngModel)]="aluno.nome" />
+  </label><br/><br/>
+
+  <label>Matrícula:
+    <input type="input" name="matricula" size="15" [(ngModel)]="aluno.matricula" />
+  </label><br/><br/>
+
+  <label>Curso:
+    <select name="curso" [(ngModel)]="cursoSelecionado">
+      <option *ngFor="let c of cursos" [ngValue]="c" [selected]="c === cursoSelecionado">{{c.nome}} - {{c.instituicao}}</option>
+    </select>
+  </label><br/><br/>
+
+  <label>Semestre:
+    <input type="input" name="semestre" size="10" [(ngModel)]="aluno.semestre" />
+  </label><br/><br/>
+
+  <label>Status:
+    <select name="status" [(ngModel)]="aluno.status">
+      <option value="matriculado">Matriculado</option>
+      <option value="trancado">Trancado</option>
+      <option value="jubilado">Jubilado</option>
+    </select>
+  </label><br/><br/>
+
+  <button type="submit">{{txtBtn}}</button>
+
+</form>

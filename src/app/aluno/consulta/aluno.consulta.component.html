@@ -1,0 +1,26 @@
+<h3>{{titulo}}</h3>
+
+<table>
+  <thead>
+    <th>Matrícula</th>
+    <th>Nome</th>
+    <th>Curso</th>
+    <th>Semestre</th>
+    <th>Editar</th>
+    <th>Remover</th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let aluno of alunos; let i = index;">
+      <td>{{aluno.matricula}}</td>
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.curso.nome}}</td>
+      <td>{{aluno.semestre}}</td>
+      <td><a (click)="editar(aluno.id);">Editar</a></td>
+      <td><a (click)="remover(aluno.id, i);">Remover</a></td>
+    </tr>
+    <tr>
+      <td colspan="6" style="text-align: left;">Total de Registros: {{alunos.length}}</td>
+    </tr>
+  </tbody>
+</table>
